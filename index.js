@@ -129,3 +129,35 @@ data1();
       }
 
   data();
+
+
+
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data'); 
+    const data = await response.json(); 
+    console.log(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
+
+fetchData();
+
+function withPromises() {
+
+  let promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Hello World, after 3 seconds");
+    }, 3000);
+  });
+
+  promise.then((data) => {
+    console.log(data);
+  });
+
+  
+  console.log("Some Synchrnous Code");
+}
+
+withPromises(); 
